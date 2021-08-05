@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>user management</title>
+{%endblock%}
+{%block body%}
+    <div class="container">
+        <div class="text-center">
+            <span class="badge bg-dark"><h3>User Management System</h3></span>
+        </div>
+        <form action="/" method="POST">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="fullname" id="floatingPassword" placeholder="Full Name">
+                <label for="floatingPassword">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="number" id="floatingPassword" placeholder="phone number">
+                <label for="floatingPassword">Phone Number</label>
+            </div>
+            <div class="text-center">
+                <button  class="btn btn-sm btn-primary">Add User</button>
+            </div>
+        </form>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">
+                    Actions
+                </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {%for user in users%}
+              <tr>
+                <th scope="row">{{user.id}}</th>
+                <td> {{user.full_name}} </td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone_number}}</td>
+                <td><div class="text-center">
+                    <a class="btn btn-sm btn-warning" href="/update/{{user.id}}">Update</a>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-sm btn-danger" href="/delete/{{user.id}}">Delete</a>
+                </div></td>
+              </tr>
+              {%endfor%}
+            </tbody>
+          </table>
+       
+        
+    </div>
+    
+{%endblock%}

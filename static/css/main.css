@@ -1,0 +1,17 @@
+.container {
+    padding: 20px;
+    width: 60%;
+    margin-top: 20px;
+}
+.container input {
+    padding-bottom: 10px;
+}
+.badge  {
+   margin-bottom: 10px;
+}
+.table {
+    padding: 10px;
+}
+.table .btn {
+    margin: 2px;
+}

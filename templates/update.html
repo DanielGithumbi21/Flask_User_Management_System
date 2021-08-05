@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block head%}
+<title>user management</title>
+{%endblock%}
+{%block body%}
+    <div class="container">
+        <div class="text-center">
+            <span class="badge bg-dark"><h3>User Management System</h3></span>
+        </div>
+        <form action="/update/{{user.id}}" method="POST">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="fullname" value="{{user.full_name}}" id="floatingPassword" placeholder="Full Name">
+                <label for="floatingPassword">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" value="{{user.email}}" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="number" value="{{user.phone_number}}" id="floatingPassword" placeholder="phone number">
+                <label for="floatingPassword">Phone Number</label>
+            </div>
+            <div class="text-center">
+                <button  class="btn btn-sm btn-warning">Update User</button>
+            </div>
+        </form>
+       
+        
+    </div>
+{%endblock%}
